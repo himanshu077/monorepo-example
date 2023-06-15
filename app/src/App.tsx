@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import AppRouter from "./router";
-import { auth } from "./lib/firebase";
+import { auth } from "@demo/api";
 import { SIGN_IN } from "./store/auth/types";
 import { useAppDispatch } from "./store/hooks";
 
@@ -18,9 +18,9 @@ function App() {
             token: user.token,
           },
         });
-        setLoading(false)
+        setLoading(false);
       } else {
-        setLoading(false)
+        setLoading(false);
       }
     });
     return () => {
@@ -30,9 +30,9 @@ function App() {
 
   return (
     <div className="h-full w-full">
-      {loading ? <p>Loading...</p>: <AppRouter />}
+      {loading ? <p>Loading...</p> : <AppRouter />}
     </div>
-  )
+  );
 }
 
 export default App;

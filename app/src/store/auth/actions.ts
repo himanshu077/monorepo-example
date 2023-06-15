@@ -1,15 +1,10 @@
-import { GoogleAuthProvider, signInWithPopup, signOut } from "firebase/auth";
-import { SIGN_IN, SIGN_OUT } from "./types";
-import { auth, provider } from "../../lib/firebase";
+import { onSignIn, onSignOut } from "@demo/api";
 import { Dispatch } from "redux";
+import { SIGN_IN, SIGN_OUT } from "./types";
 
-// Posts action
 export const signInAction = () => async (dispatch: Dispatch) => {
   try {
-    const result = await signInWithPopup(auth, provider);
-    const credential = GoogleAuthProvider.credentialFromResult(result);
-    const token = credential?.accessToken;
-    const user = result.user;
+    const { token, user } = await onSignIn();
     dispatch({
       type: SIGN_IN,
       payload: {
@@ -17,19 +12,20 @@ export const signInAction = () => async (dispatch: Dispatch) => {
         user,
       },
     });
-  } catch (error: any) {
-    const errorCode = error.code;
-    const errorMessage = error.message;
-    const email = error.customData.email;
-    const credential = GoogleAuthProvider.credentialFromError(error);
+  } catch (error) {
+    const err = error as Error;
+    const parsedError = JSON.parse(err.message);
+    console.log(parsedError, "error sign in");
   }
 };
 
-export const signOutAction = () => async (dispatch) => {
+export const signOutAction = () => async (dispatch: Dispatch) => {
   try {
-    await signOut(auth);
+    await onSignOut();
     dispatch({
       type: SIGN_OUT,
     });
-  } catch (error) {}
+  } catch (error) {
+    console.log(error, "errors are here!");
+  }
 };

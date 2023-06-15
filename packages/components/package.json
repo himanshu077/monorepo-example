@@ -1,8 +1,8 @@
 {
   "name": "@demo/components",
-  "version": "1.0.1",
+  "version": "1.0.0",
   "description": "",
-  "module": "dist/components.bundle.min.js",
+  "module": "dist/index.js",
   "scripts": {
     "build": "set NODE_ENV=production && webpack",
     "build-watch": "webpack --watch",

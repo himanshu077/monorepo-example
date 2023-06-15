@@ -3,13 +3,13 @@
   "private": true,
   "version": "1.0.0",
   "workspaces": [
-    "./app",
-    "./components"
+    "packages/*",
+    "app"
   ],
   "scripts": {
-    "build-components": "cd components && yarn build",
-    "watch-components": "cd components && yarn build-watch",
-    "start-app": "cd app && yarn start",
-    "build-app": "cd app && yarn build"
+    "build-components": "cd packages && cd components && yarn build",
+    "watch-components": "cd packages && cd components && yarn build-watch",
+    "start": "cd app && yarn start",
+    "build": "cd app && yarn build"
   }
 }

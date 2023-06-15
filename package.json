@@ -1,0 +1,15 @@
+{
+  "name": "@demo/monorepo",
+  "private": true,
+  "version": "1.0.0",
+  "workspaces": [
+    "./app",
+    "./components"
+  ],
+  "scripts": {
+    "build-components": "cd components && yarn build",
+    "watch-components": "cd components && yarn build-watch",
+    "start-app": "cd app && yarn start",
+    "build-app": "cd app && yarn build"
+  }
+}

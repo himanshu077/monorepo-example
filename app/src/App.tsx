@@ -29,7 +29,7 @@ function App() {
   }, []);
 
   return (
-    <div>
+    <div className="h-full w-full">
       {loading ? <p>Loading...</p>: <AppRouter />}
     </div>
   )

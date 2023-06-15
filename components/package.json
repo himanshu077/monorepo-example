@@ -1,6 +1,6 @@
 {
   "name": "@demo/components",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "module": "dist/components.bundle.min.js",
   "scripts": {

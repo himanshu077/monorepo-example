@@ -5,7 +5,7 @@ import { signInAction } from "../store/auth/actions";
 const Login = () => {
   const dispatch = useDispatch();
   return (
-    <div>
+    <div className="flex h-full w-full">
       <GoogleLogin onClick={() => {
         dispatch(signInAction());
       }} />

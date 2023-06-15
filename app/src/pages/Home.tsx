@@ -1,19 +1,17 @@
 import { useSelector, useDispatch } from "react-redux";
 import { signOutAction } from "../store/auth/actions";
-import { Button, Profile } from "@demo/components/src";
+import { Profile } from "@demo/components/src/index";
 
 const Home = () => {
   const user = useSelector((state: any) => state.auth.user);
   const dispatch = useDispatch();
   return (
-    <div>
-      <Profile
-        name={user.displayName}
-        avatar={user.photoURL}
-        email={user.email}
-      />
-      <Button text="Logout" onClick={() => dispatch(signOutAction())} />
-    </div>
+    <Profile
+      name={user.displayName}
+      avatar={user.photoURL}
+      email={user.email}
+      onLogout={() => dispatch(signOutAction())}
+    />
   );
 };
 

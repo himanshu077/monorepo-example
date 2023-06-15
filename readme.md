@@ -1,7 +1,8 @@
-# Monorepo
+# Monorepo using Yarn workspaces
 
 How to run the project?
 
+- Yarn is required, Download using npm i -g yarn or download using https://classic.yarnpkg.com/lang/en/docs/install/#windows-stable
 - Node version 16+ is required
 - Install packages using `yarn install` in the root directory
 - To build the component monorepo use `yarn build-components` in root directory

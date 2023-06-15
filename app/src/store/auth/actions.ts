@@ -10,10 +10,6 @@ export const signInAction = () => async (dispatch: Dispatch) => {
     const credential = GoogleAuthProvider.credentialFromResult(result);
     const token = credential?.accessToken;
     const user = result.user;
-    console.log({
-      token,
-      user,
-    });
     dispatch({
       type: SIGN_IN,
       payload: {
@@ -26,7 +22,6 @@ export const signInAction = () => async (dispatch: Dispatch) => {
     const errorMessage = error.message;
     const email = error.customData.email;
     const credential = GoogleAuthProvider.credentialFromError(error);
-    console.log(errorCode, errorMessage, email, credential);
   }
 };
 

@@ -9,7 +9,6 @@ const initialState = {
 export default function (state = initialState, action: any) {
   switch (action.type) {
     case SIGN_IN:
-      console.log('sign in action called')
       return {
         ...state,
         loading: false,

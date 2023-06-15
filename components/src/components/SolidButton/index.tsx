@@ -6,7 +6,6 @@ interface IProps {
 }
 
 const SolidButton = ({ text = "", onClick }: IProps) => {
-  console.log(onClick, 'onClick method');
   return (
     <button
       type="button"

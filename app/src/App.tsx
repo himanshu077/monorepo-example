@@ -1,11 +1,11 @@
 import { useState, useEffect } from "react";
-import { useDispatch } from "react-redux";
 import AppRouter from "./router";
 import { auth } from "./lib/firebase";
 import { SIGN_IN } from "./store/auth/types";
+import { useAppDispatch } from "./store/hooks";
 
 function App() {
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
